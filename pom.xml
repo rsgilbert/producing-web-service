@@ -23,6 +23,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<!-- For web services -->
 		<!-- See https://spring.io/guides/gs/producing-web-service/ -->
 		<dependency>
@@ -42,6 +43,16 @@
 			<groupId>wsdl4j</groupId>
 			<artifactId>wsdl4j</artifactId>
 		</dependency>
+
+		<!-- For web services -->
+		<!-- JAXB Implementation -->
+		<!-- See: https://stackoverflow.com/a/48279048/10030693 -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -67,9 +78,10 @@
 					</execution>
 				</executions>
 				<configuration>
+					<!-- Directory to find files -->
 					<sources>
 						<source>
-							${project.basedir}/scr/main/resources/countries.xsd
+							${project.basedir}/src/main/resources/schema
 						</source>
 					</sources>
 				</configuration>

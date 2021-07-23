@@ -1,5 +1,8 @@
 package com.gilboot.soapproducer.producingwebservice;
 
+
+
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import javax.annotation.PostConstruct;
@@ -9,6 +12,7 @@ import java.util.Map;
 /**
  * Dummy country repository with hard-coded data.
  */
+@Component
 public class CountryRepository {
     private static final Map<String, Country> countries = new HashMap<>();
 

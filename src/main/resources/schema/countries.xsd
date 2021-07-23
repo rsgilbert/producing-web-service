@@ -1,11 +1,14 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:tns="http://spring.io//guides-gs-producing-web-service"
-           targetNamespace="http://spring.io/guides/gs-producing-web-service"
-           elementFormDefault="qualified">
+           elementFormDefault="qualified"
+           xmlns:tns="http://soapproducer.gilboot.com/producingwebservice"
+           targetNamespace="http://soapproducer.gilboot.com/producingwebservice"
+    >
+    <!-- See: https://stackoverflow.com/a/43289248/10030693 -->
+
     <xs:element name="getCountryRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="name" type="xs:string" />
+                <xs:element name="name" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -13,14 +16,14 @@
     <xs:element name="getCountryResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="country" type="tns:country" />
+                <xs:element name="country" type="tns:country"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
     <xs:complexType name="country">
         <xs:sequence>
-            <xs:element name="name" type="xs:string" />
+            <xs:element name="name" type="xs:string"/>
             <xs:element name="population" type="xs:int"/>
             <xs:element name="capital" type="xs:string"/>
             <xs:element name="currency" type="tns:currency"/>
@@ -29,9 +32,10 @@
 
     <xs:simpleType name="currency">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="GBP"/>
+            <xs:enumeration value="POUND"/>
             <xs:enumeration value="EUR"/>
             <xs:enumeration value="PLN"/>
+            <xs:enumeration value="UGX"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

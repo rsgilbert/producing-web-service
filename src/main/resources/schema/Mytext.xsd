@@ -1,0 +1,15 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="security_common"
+           xmlns:sc="security_common" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:simpleType name="TypeList">
+        <xs:list itemType="xs:string" />
+    </xs:simpleType>
+
+    <xs:simpleType name="ExpectedDataFormatEnum">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="STRING" />
+            <xs:enumeration value="BYTE_ARRAY" />
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

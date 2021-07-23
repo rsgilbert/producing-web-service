@@ -1,0 +1,8 @@
+<soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    >
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getCountryRequest></gs:getCountryRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
