@@ -1,8 +1,11 @@
 <soapenv:Envelope
-    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    >
+        xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:pws="http://soapproducer.gilboot.com/producingwebservice"
+>
     <soapenv:Header/>
     <soapenv:Body>
-        <gs:getCountryRequest></gs:getCountryRequest>
+        <pws:getCountryRequest>
+            <pws:name>United Kingdom</pws:name>
+        </pws:getCountryRequest>
     </soapenv:Body>
 </soapenv:Envelope>

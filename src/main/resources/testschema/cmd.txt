@@ -1,0 +1,10 @@
+// Send curl request
+C:\Users\GilbertS\source\spring\producing-web-service>curl -X POST -H "Content-Typ
+e: text/xml" -d @src/main/resources/testschema/request.xml http://localhost:8080/w
+s
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOA
+P-ENV:Header/><SOAP-ENV:Body><ns2:getCountryResponse xmlns:ns2="http://soapproduce
+r.gilboot.com/producingwebservice"><ns2:country><ns2:name>United Kingdom</ns2:name
+><ns2:population>140000000</ns2:population><ns2:capital>London</ns2:capital><ns2:c
+urrency>POUND</ns2:currency></ns2:country></ns2:getCountryResponse></SOAP-ENV:Body
+></SOAP-ENV:Envelope>

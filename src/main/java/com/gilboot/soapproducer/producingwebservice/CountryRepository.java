@@ -1,7 +1,6 @@
 package com.gilboot.soapproducer.producingwebservice;
 
 
-
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
@@ -14,7 +13,7 @@ import java.util.Map;
  */
 @Component
 public class CountryRepository {
-    private static final Map<String, Country> countries = new HashMap<>();
+    private final Map<String, Country> countries = new HashMap<>();
 
     /**
      * Initializes the dummy data that we shall use in our web service.
@@ -33,19 +32,23 @@ public class CountryRepository {
         uganda.setCapital("Kampala");
         uganda.setCurrency(Currency.UGX);
         uganda.setPopulation(40_000_000);
-        countries.put(uganda.getName(), spain);
+        countries.put(uganda.getName(), uganda);
 
         Country uk = new Country();
         uk.setName("United Kingdom");
         uk.setCapital("London");
         uk.setCurrency(Currency.POUND);
         uk.setPopulation(140_000_000);
-        countries.put(uk.getName(), spain);
+        countries.put(uk.getName(), uk);
 
     }
 
     public Country findCountry(String name) {
+        Map<String, Country> cm = countries;
+        Country c = cm.get(name);
         Assert.notNull(name, "The country's name must not be null");
-        return countries.get(name);
+        Country r =  countries.get(name);
+        return r;
     }
+
 }
